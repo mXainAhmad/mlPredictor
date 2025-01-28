@@ -43,15 +43,15 @@ st.header("Input Data for Prediction")
 svm_model = load_model()
 
 if svm_model:
-    gender = st.sidebar.selectbox("Gender", options=["Male", "Female"])
-    age = st.sidebar.number_input("Age", min_value=0.0, step=1.0)
-    salary = st.sidebar.number_input("Estimated Salary", min_value=0.0, step=1000.0)
+    gender = st.selectbox("Gender", options=["Male", "Female"])
+    age = st.number_input("Age", min_value=0.0, step=1.0)
+    salary = st.number_input("Estimated Salary", min_value=0.0, step=1000.0)
 
     # Convert Gender to numerical values
     gender_encoded = 1 if gender == "Male" else 0
     user_input = [gender_encoded, age, salary]
 
-    if st.sidebar.button("Predict"):
+    if st.button("Predict"):
         prediction = make_prediction(svm_model, user_input)
         if prediction is not None:
             st.subheader(f"Prediction: {'Purchased' if prediction == 1 else 'Not Purchased'}")
