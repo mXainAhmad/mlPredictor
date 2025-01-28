@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Path to the pre-trained model
-MODEL_PATH = "svm_model1.pkl"
+MODEL_PATH = "svm_model.pkl"
 
 # Load the pre-trained SVM model
 def load_model():
@@ -24,17 +24,7 @@ def make_prediction(model, input_data):
     except Exception as e:
         st.error(f"Prediction error: {e}")
         return None
-st.markdown(
-    """
-    <style>
-        body {
-            background-color: #4169E1 !important;  /* Royal Blue */
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
+        
 # Streamlit Application UI
 st.title("SVM Purchase Predictor")
 st.header("Input Data for Prediction")
