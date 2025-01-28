@@ -26,7 +26,7 @@ def make_prediction(model, input_data):
         return None
 
 # Streamlit Application UI
-st.title("SVM Prediction App")
+st.title("SVM Purchase Predictor")
 st.header("Input Data for Prediction")
 
 # Load the model
