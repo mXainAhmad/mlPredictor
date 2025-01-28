@@ -9,10 +9,10 @@ MODEL_PATH = "svm_model1.pkl"
 def load_model():
     try:
         model = joblib.load(MODEL_PATH)
-        st.sidebar.success("Model loaded successfully.")
+        st.success("Model loaded successfully.")
         return model
     except Exception as e:
-        st.sidebar.error(f"Error loading model: {e}")
+        st.error(f"Error loading model: {e}")
         return None
 
 # Function for making predictions
