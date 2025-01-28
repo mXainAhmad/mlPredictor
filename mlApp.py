@@ -28,7 +28,7 @@ st.markdown(
     """
     <style>
         body {
-            background-color: #4169E1;  /* Change this to any color you like */
+            background-color: #4169E1;  /* Royal Blue */
         }
     </style>
     """,
