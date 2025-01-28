@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Path to the pre-trained model
-MODEL_PATH = "svm_model.pkl"
+MODEL_PATH = "svm_model1.pkl"
 
 # Load the pre-trained SVM model
 def load_model():
@@ -24,6 +24,16 @@ def make_prediction(model, input_data):
     except Exception as e:
         st.error(f"Prediction error: {e}")
         return None
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: #4169E1;  /* Change this to any color you like */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Streamlit Application UI
 st.title("SVM Purchase Predictor")
@@ -33,7 +43,6 @@ st.header("Input Data for Prediction")
 svm_model = load_model()
 
 if svm_model:
-    st.sidebar.header("Input Features")
     gender = st.sidebar.selectbox("Gender", options=["Male", "Female"])
     age = st.sidebar.number_input("Age", min_value=0.0, step=1.0)
     salary = st.sidebar.number_input("Estimated Salary", min_value=0.0, step=1000.0)
